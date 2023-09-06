@@ -1,9 +1,13 @@
-DevOps Blog 1: CI Jenkins Setup Using AWS EC2 Instance
+DevOps Blog 2: Continuation of previous post - Extending CI pipeline Jenkins Setup 
 
-Project: CI Jenkins Setup Using AWS EC2 Instance
+Project: Continuation of previous post - Extending CI pipeline Jenkins Setup 
 Outcome: Learn to install the Jenkins as Docker Container in EC2 instance and setup a simple CI Pipeline.
 
 To view the detailed post follow me at LinkedIn https://www.linkedin.com/in/mukesh-kuduva-vivekanandan/
+
+Project: CI Jenkins Setup Using AWS EC2 Instance - Cont of Blog Post 1
+Outcome: In first blog post we have created a simple jenkins pipeline and create job to run the Jenkins file to print Hello World, In this we are improving the Jenkinsfile to checkout the Java based maven project and create stages in Jenkinsfile to compile and execute a unit test.
+    Reference to Post 1 - 
 
 Rough Steps for CI using Jenkins - 
 
@@ -16,4 +20,5 @@ Rough Steps for CI using Jenkins -
 7: Install the git binary on the server using yum
 8: Create a github repository with sample Jenkinsfile with hello world
 9: Create jenkins job pipeline pointing to github repository Jenkinsfile
-10: Execute the jenkins job
+10: Create github code repo for maven project. A sample maven project can be anything of your choice. Example Spring boot API Project
+11: Enhance the Jenkins file to create stage checkout the maven project from Github ,create stage to compile and create stage to run unit test
