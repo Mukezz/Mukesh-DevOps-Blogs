@@ -9,7 +9,11 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Assuming you've set up a GitHub credential in Jenkins named 'github-credentials'
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github-credentials', url: 'https://github.com/Mukezz/CIDemoBlog2.git']]])
+                git branch: 'main',
+                        credentialsId: 'github-credentials',
+                        url: 'https://github.com/Mukezz/CIDemoBlog2.git'
+                
+                //checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github-credentials', url: 'https://github.com/Mukezz/CIDemoBlog2.git']]])
             }
         }
 
