@@ -20,7 +20,7 @@ pipeline {
         stage('Compile') {
             steps {
                 script {
-                    def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
+                    //def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
                     sh "${mvnHome}/bin/mvn compile"
                 }
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
+                    //def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
                     sh "${mvnHome}/bin/mvn test"
                 }
             }
