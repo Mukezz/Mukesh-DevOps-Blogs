@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     //def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
-                    sh "${mvnHome}/bin/mvn compile"
+                    sh "mvn compile"
                 }
             }
         }
@@ -30,7 +30,7 @@ pipeline {
             steps {
                 script {
                     //def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
-                    sh "${mvnHome}/bin/mvn test"
+                    sh "mvn test"
                 }
             }
         }
