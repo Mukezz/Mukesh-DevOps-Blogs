@@ -1,0 +1,34 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'Maven_3_8_7'  // Replace 'Maven_3_8_7' with the name of your Maven installation in Jenkins
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Assuming you've set up a GitHub credential in Jenkins named 'github-credentials'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'github-credentials', url: 'https://github.com/Mukezz/CIDemoBlog2.git']]])
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                script {
+                    def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
+                    sh "${mvnHome}/bin/mvn compile"
+                }
+            }
+        }
+
+        stage('Test') {
+            steps {
+                script {
+                    def mvnHome = tool name: 'Maven_3_8_7', type: 'Maven'
+                    sh "${mvnHome}/bin/mvn test"
+                }
+            }
+        }
+    }
+}
