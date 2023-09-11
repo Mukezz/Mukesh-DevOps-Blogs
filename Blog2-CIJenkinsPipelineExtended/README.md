@@ -1,13 +1,10 @@
 DevOps Blog 2: Continuation of previous post - Extending CI pipeline Jenkins Setup 
 
-Project: Continuation of previous post - Extending CI pipeline Jenkins Setup 
-Outcome: Learn to install the Jenkins as Docker Container in EC2 instance and setup a simple CI Pipeline.
-
 To view the detailed post follow me at LinkedIn https://www.linkedin.com/in/mukesh-kuduva-vivekanandan/
 
-Project: CI Jenkins Setup Using AWS EC2 Instance - Cont of Blog Post 1
-Outcome: In first blog post we have created a simple jenkins pipeline and create job to run the Jenkins file to print Hello World, In this we are improving the Jenkinsfile to checkout the Java based maven project and create stages in Jenkinsfile to compile and execute a unit test.
-    Reference to Post 1 - 
+Project: CI Pipeline setup for Maven-Spring Boot Project with Custom Dockerized Jenkins-Maven on AWS
+
+Outcome: Learn how to create a simple Maven-Spring Boot Project, Spin up EC2 instance, Create Jenkinsfile to checkout, build and test the java project, Create customized Jenkins-Maven image using Dockerfile. Generate the Personal Access Token in GitHub for authentication (to avoid exposing password in configuration)
 
 Rough Steps for CI using Jenkins - 
 
