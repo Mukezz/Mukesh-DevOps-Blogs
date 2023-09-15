@@ -18,5 +18,12 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     apt-get install -y docker-ce-cli && \
     rm -rf /var/lib/apt/lists/*
 
-# Return to the Jenkins user
-USER jenkins
+# Install Maven
+RUN apt-get install -y maven
+
+# Set the environment variable for Maven
+ENV MAVEN_HOME /usr/share/maven
+ENV PATH $MAVEN_HOME/bin:$PATH
+
+# Expose the default Jenkins port
+EXPOSE 80801
