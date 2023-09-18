@@ -44,7 +44,7 @@ pipeline {
         stage('Running Dockerfile to create image') {
             steps {
                 script {
-                    sh "docker built -t devops/mukeshblogpost3 ."
+                    sh "docker built -t mukeshblogpost3 ."
                 }
             }
         }
