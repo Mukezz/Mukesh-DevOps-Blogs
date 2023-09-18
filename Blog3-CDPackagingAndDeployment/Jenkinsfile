@@ -53,7 +53,7 @@ pipeline {
         stage('Starting the application docker container') {
             steps {
                 script {
-                    sh "docker run -p 8080:8080 devops/mukeshblogpost3 -d"
+                    sh "docker run -d -p 8080:8080 devops/mukeshblogpost3"
                 }
             }
         }              
