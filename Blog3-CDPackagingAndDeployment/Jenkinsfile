@@ -36,7 +36,7 @@ pipeline {
         stage('Building Jar') {
             steps {
                 script {
-                    sh "mvn install"
+                    sh 'mvn release:prepare release:perform -Darguments="-Dmaven.deploy.skip=true"'
                 }
             }
         }
@@ -44,23 +44,16 @@ pipeline {
         stage('Running Dockerfile to create image') {
             steps {
                 script {
-                    sh "mvn test"
+                    sh "docker built -t devops/mukeshblogpost3 ."
                 }
             }
         }
-
-        stage('Pushing the Docker application image to Dockerhub') {
-            steps {
-                script {
-                    sh "mvn test"
-                }
-            }
-        }         
+       
 
         stage('Starting the application docker container') {
             steps {
                 script {
-                    sh "mvn test"
+                    sh "docker run -p 8080:8080 devops/mukeshblogpost3 -d"
                 }
             }
         }              
