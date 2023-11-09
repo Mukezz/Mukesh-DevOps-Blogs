@@ -24,6 +24,3 @@ RUN apt-get install -y maven
 # Set the environment variable for Maven
 ENV MAVEN_HOME /usr/share/maven
 ENV PATH $MAVEN_HOME/bin:$PATH
-
-# Expose the default Jenkins port
-EXPOSE 80801
